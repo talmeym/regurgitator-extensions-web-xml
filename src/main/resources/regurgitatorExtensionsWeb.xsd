@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:rgc="http://common.regurgitator.emarte.com"
+           xmlns:rgw="http://web.extensions.regurgitator.emarte.com"
+           targetNamespace="http://web.extensions.regurgitator.emarte.com" elementFormDefault="qualified">
+
+    <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.com"/>
+
+    <xs:complexType name="process-response">
+        <xs:sequence>
+            <xs:any minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="http-call-through">
+        <xs:sequence>
+			<xs:element name="host" type="rgc:populated-string" minOccurs="0"/>
+			<xs:element name="port" type="xs:integer" minOccurs="0"/>
+            <xs:element name="process-response" type="rgw:process-response" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="host" type="rgc:populated-string"/>
+		<xs:attribute name="port" type="xs:integer"/>
+		<xs:attribute name="id" type="rgc:populated-string"/>
+	</xs:complexType>
+
+	<xs:element name="http-call-through" type="rgw:http-call-through"/>
+</xs:schema>

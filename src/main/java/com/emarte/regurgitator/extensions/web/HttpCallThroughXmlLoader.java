@@ -17,8 +17,8 @@ public class HttpCallThroughXmlLoader implements XmlLoader<Step> {
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
         String id = loadId(element, allIds);
 
-		String host = loadValueFromElementOrAttribute(element, HOST);
-		String port = loadValueFromElementOrAttribute(element, PORT);
+		String host = loadStringFromElementOrAttribute(element, HOST);
+		String port = loadStringFromElementOrAttribute(element, PORT);
 
 		Element processResponseElement = element.element(PROCESS_RESPONSE);
 		Step responseProcessing = null;

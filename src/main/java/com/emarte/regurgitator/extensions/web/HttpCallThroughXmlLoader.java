@@ -10,7 +10,7 @@ import static com.emarte.regurgitator.extensions.web.WebConfigConstants.*;
 import static java.lang.Integer.parseInt;
 
 public class HttpCallThroughXmlLoader implements XmlLoader<Step> {
-    private static Log log = Log.getLog(HttpCallThroughXmlLoader.class);
+    private static final Log log = Log.getLog(HttpCallThroughXmlLoader.class);
 	private static final XmlLoaderUtil<XmlLoader<Step>> loaderUtil = new XmlLoaderUtil<XmlLoader<Step>>();
 
     @Override

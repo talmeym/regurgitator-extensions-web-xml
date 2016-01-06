@@ -16,8 +16,10 @@
         <xs:sequence>
             <xs:element name="process-response" type="rgw:process-response" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute name="host" type="rgc:populated-string"/>
-		<xs:attribute name="port" type="xs:integer"/>
+        <xs:attribute name="host" type="rgc:populated-string" use="required"/>
+		<xs:attribute name="port" type="xs:integer"  use="required"/>
+        <xs:attribute name="username" type="rgc:populated-string"/>
+		<xs:attribute name="password" type="rgc:populated-string"/>
 		<xs:attribute name="id" type="rgc:populated-string"/>
 	</xs:complexType>
 

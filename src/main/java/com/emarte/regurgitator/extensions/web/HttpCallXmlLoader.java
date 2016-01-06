@@ -28,7 +28,14 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
 			responseProcessing = loaderUtil.deriveLoader(innerElement).load(innerElement, allIds);
 		}
 
+		String username = element.attributeValue(USERNAME);
+		String password = element.attributeValue(PASSWORD);
+
+		if((username == null && password != null) || (username != null && password == null)) {
+			throw new RegurgitatorException("Both username and password (or neither) required");
+		}
+
 		log.debug("Loaded HttpCall '" + id + "'");
-        return new HttpCall(id, new HttpMessageProxy(host, parseInt(port)), responseProcessing);
+        return new HttpCall(id, new HttpMessageProxy(host, parseInt(port), username, password), responseProcessing);
     }
 }

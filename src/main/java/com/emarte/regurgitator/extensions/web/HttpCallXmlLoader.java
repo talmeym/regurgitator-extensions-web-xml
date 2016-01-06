@@ -9,8 +9,8 @@ import static com.emarte.regurgitator.core.XmlConfigUtil.*;
 import static com.emarte.regurgitator.extensions.web.WebConfigConstants.*;
 import static java.lang.Integer.parseInt;
 
-public class HttpCallThroughXmlLoader implements XmlLoader<Step> {
-    private static final Log log = Log.getLog(HttpCallThroughXmlLoader.class);
+public class HttpCallXmlLoader implements XmlLoader<Step> {
+    private static final Log log = Log.getLog(HttpCallXmlLoader.class);
 	private static final XmlLoaderUtil<XmlLoader<Step>> loaderUtil = new XmlLoaderUtil<XmlLoader<Step>>();
 
     @Override
@@ -28,7 +28,7 @@ public class HttpCallThroughXmlLoader implements XmlLoader<Step> {
 			responseProcessing = loaderUtil.deriveLoader(innerElement).load(innerElement, allIds);
 		}
 
-		log.debug("Loaded HttpCallThrough '" + id + "'");
-        return new HttpCallThrough(id, new HttpMessageProxy(host, parseInt(port)), responseProcessing);
+		log.debug("Loaded HttpCall '" + id + "'");
+        return new HttpCall(id, new HttpMessageProxy(host, parseInt(port)), responseProcessing);
     }
 }

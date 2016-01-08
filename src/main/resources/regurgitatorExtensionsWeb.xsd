@@ -23,5 +23,10 @@
 		<xs:attribute name="id" type="rgc:populated-string"/>
 	</xs:complexType>
 
+	<xs:complexType name="query-param-processor">
+		<xs:attribute name="key" type="rgc:populated-string" use="required"/>
+	</xs:complexType>
+
 	<xs:element name="http-call" type="rgw:http-call"/>
+	<xs:element name="query-param-processor" type="rgw:query-param-processor"/>
 </xs:schema>

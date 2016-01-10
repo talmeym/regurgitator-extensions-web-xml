@@ -3,7 +3,7 @@ package com.emarte.regurgitator.extensions.web;
 import com.emarte.regurgitator.core.*;
 import org.dom4j.Element;
 
-import java.util.Set;
+import java.util.*;
 
 import static com.emarte.regurgitator.core.XmlConfigUtil.*;
 import static com.emarte.regurgitator.extensions.web.WebConfigConstants.*;
@@ -17,15 +17,11 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
         String id = loadId(element, allIds);
 
-		String host = element.attributeValue(HOST);
-		String port = element.attributeValue(PORT);
+		List<Step> steps = new ArrayList<Step>();
 
-		Element processResponseElement = element.element(PROCESS_RESPONSE);
-		Step responseProcessing = null;
-
-		if(processResponseElement != null) {
-			Element innerElement = getChild(processResponseElement);
-			responseProcessing = loaderUtil.deriveLoader(innerElement).load(innerElement, allIds);
+		for(Iterator<Element> iterator = element.elementIterator(); iterator.hasNext(); ) {
+			Element stepElement = iterator.next();
+			steps.add(loaderUtil.deriveLoader(stepElement).load(stepElement, allIds));
 		}
 
 		String username = element.attributeValue(USERNAME);
@@ -36,6 +32,6 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
 		}
 
 		log.debug("Loaded HttpCall '" + id + "'");
-        return new HttpCall(id, new HttpMessageProxy(host, parseInt(port), username, password), responseProcessing);
+        return new HttpCall(id, new HttpMessageProxy(element.attributeValue(HOST), parseInt(element.attributeValue(PORT)), username, password), steps);
     }
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:rg="http://core.regurgitator.emarte.com"
            xmlns:rgc="http://common.regurgitator.emarte.com"
            xmlns:rgw="http://web.extensions.regurgitator.emarte.com"
            targetNamespace="http://web.extensions.regurgitator.emarte.com" elementFormDefault="qualified">
 
     <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.com"/>
+    <xs:import schemaLocation="regurgitatorCore.xsd" namespace="http://core.regurgitator.emarte.com"/>
 
     <xs:complexType name="http-call">
 		<xs:sequence>
@@ -21,6 +23,16 @@
 		<xs:attribute name="key" type="rgc:populated-string" use="required"/>
 	</xs:complexType>
 
+	<xs:complexType name="create-http-response">
+		<xs:complexContent>
+			<xs:extension base="rg:create-response">
+				<xs:attribute name="status-code" type="xs:integer"/>
+				<xs:attribute name="content-type" type="rgc:populated-string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
 	<xs:element name="http-call" type="rgw:http-call"/>
 	<xs:element name="query-param-processor" type="rgw:query-param-processor"/>
+	<xs:element name="create-http-response" type="rgw:create-http-response"/>
 </xs:schema>

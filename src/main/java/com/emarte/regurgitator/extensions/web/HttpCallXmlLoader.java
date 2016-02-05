@@ -32,6 +32,6 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
 		}
 
 		log.debug("Loaded HttpCall '" + id + "'");
-        return new HttpCall(id, new HttpMessageProxy(element.attributeValue(HOST), parseInt(element.attributeValue(PORT)), username, password), steps);
+        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(element.attributeValue(HOST), parseInt(element.attributeValue(PORT)), username, password)), steps);
     }
 }

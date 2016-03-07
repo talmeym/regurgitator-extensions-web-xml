@@ -51,7 +51,7 @@ the body of the http-call step can contain zero or more "response processing" st
 
 ### create-http-response
 
-a create-http-response step returns a response from regurgitator, allowing ``response-metadata`` parameters to be concisely set set for ``content-type`` and ``status-code``.
+a create-http-response step returns a response from regurgitator, concisely allowing ``response-metadata`` parameters to be set for ``content-type`` and ``status-code``.
 
 ```xml
 <rgw:create-http-response source="response" content-type="application/json" status-code="200"/>

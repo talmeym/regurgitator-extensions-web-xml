@@ -51,13 +51,13 @@ the body of the http-call step can contain zero or more "response processing" st
 
 ### create-http-response
 
-a create-http-response step returns a response from regurgitator, ensuring that ``response-metadata`` parameters are set for ``content-type`` and ``status-code``.
+a create-http-response step returns a response from regurgitator, allowing ``response-metadata`` parameters to be concisely set set for ``content-type`` and ``status-code``.
 
 ```xml
 <rgw:create-http-response source="response" content-type="application/json" status-code="200"/>
 ```
 
-this step is primarily a convenience step, agregating following core config:
+this step is primarily a convenience step, agregating the following core config:
 
 ```xml
 <rg:create-parameter name="response-metadata:status-code" value="200"/>

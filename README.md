@@ -68,3 +68,13 @@ this step is primarily a convenience step, agregating the following core config:
 ## extension web constructs in xml
 
 ### query-param-processor
+
+a query-param-processor processes a parameter value, extracting a value from within an http query string.
+
+```xml
+<rg:create-parameter name="id" value="something=this&amp;id=that&amp;third=another">
+	<rgw:query-param-processor key="id"/>
+</rg:create-parameter>
+```
+
+if the key appears in the query string more than once, the processor will aggregate the values into a collection.

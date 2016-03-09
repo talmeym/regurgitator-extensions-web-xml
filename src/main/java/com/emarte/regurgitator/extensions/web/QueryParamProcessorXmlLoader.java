@@ -5,10 +5,11 @@ import org.dom4j.Element;
 
 import java.util.Set;
 
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.KEY;
 
 public class QueryParamProcessorXmlLoader implements XmlLoader<QueryParamProcessor> {
-	public static final Log log = Log.getLog(QueryParamProcessorXmlLoader.class);
+	public static final Log log = getLog(QueryParamProcessorXmlLoader.class);
 
 	@Override
 	public QueryParamProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {

@@ -5,12 +5,13 @@ import org.dom4j.Element;
 
 import java.util.*;
 
-import static com.emarte.regurgitator.core.XmlConfigUtil.*;
+import static com.emarte.regurgitator.core.Log.getLog;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadId;
 import static com.emarte.regurgitator.extensions.web.WebConfigConstants.*;
 import static java.lang.Integer.parseInt;
 
 public class HttpCallXmlLoader implements XmlLoader<Step> {
-    private static final Log log = Log.getLog(HttpCallXmlLoader.class);
+    private static final Log log = getLog(HttpCallXmlLoader.class);
 	private static final XmlLoaderUtil<XmlLoader<Step>> loaderUtil = new XmlLoaderUtil<XmlLoader<Step>>();
 
     @Override

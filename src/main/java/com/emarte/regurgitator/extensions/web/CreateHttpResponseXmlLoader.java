@@ -5,8 +5,7 @@ import org.dom4j.Element;
 
 import java.util.Set;
 
-import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.CONTENT_TYPE;
-import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.STATUS_CODE;
+import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.*;
 
 public class CreateHttpResponseXmlLoader implements XmlLoader<CreateHttpResponse> {
 	CreateResponseXmlLoader createResponseXmlLoader = new CreateResponseXmlLoader();

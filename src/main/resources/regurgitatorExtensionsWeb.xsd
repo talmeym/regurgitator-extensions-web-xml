@@ -32,7 +32,14 @@
 		</xs:complexContent>
 	</xs:complexType>
 
+	<xs:complexType name="file-response">
+		<xs:attribute name="id" type="rgc:populated-string"/>
+		<xs:attribute name="source" type="rgc:populated-string" use="required"/>
+		<xs:attribute name="path-prefix" type="rgc:populated-string"/>
+	</xs:complexType>
+
 	<xs:element name="http-call" type="rgw:http-call"/>
 	<xs:element name="query-param-processor" type="rgw:query-param-processor"/>
 	<xs:element name="create-http-response" type="rgw:create-http-response"/>
+	<xs:element name="file-response" type="rgw:file-response"/>
 </xs:schema>

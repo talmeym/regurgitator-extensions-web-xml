@@ -1,11 +1,12 @@
 package com.emarte.regurgitator.extensions.web;
 
 import com.emarte.regurgitator.core.*;
-import org.dom4j.Element;
+import org.w3c.dom.Element;
 
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
+import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
 import static com.emarte.regurgitator.core.XmlConfigUtil.loadId;
 import static com.emarte.regurgitator.extensions.web.WebConfigConstants.PATH_PREFIX;
 
@@ -15,8 +16,8 @@ public class FileResponseXmlLoader implements XmlLoader<FileResponse> {
 	@Override
 	public FileResponse load(Element element, Set<Object> allIds) throws RegurgitatorException {
 		String id = loadId(element, allIds);
-		String source = element.attributeValue(SOURCE);
-		String pathPrefix = element.attributeValue(PATH_PREFIX);
+		String source = getAttribute(element, SOURCE);
+		String pathPrefix = getAttribute(element, PATH_PREFIX);
 
 		ContextLocation location = source != null ? new ContextLocation(source) : null;
 		log.debug("Loaded file response '" + id + "'");

@@ -11,7 +11,7 @@ import static com.emarte.regurgitator.core.XmlConfigUtil.loadId;
 import static com.emarte.regurgitator.extensions.web.WebConfigConstants.PATH_PREFIX;
 
 public class CreateFileResponseXmlLoader implements XmlLoader<CreateFileResponse> {
-	private static Log log = Log.getLog(CreateFileResponseXmlLoader.class);
+	private static final Log log = Log.getLog(CreateFileResponseXmlLoader.class);
 
 	@Override
 	public CreateFileResponse load(Element element, Set<Object> allIds) throws RegurgitatorException {

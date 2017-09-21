@@ -67,6 +67,16 @@ this step is primarily a convenience step, agregating the following core config:
 <rg:create-response source="response"/>
 ```
 
+### create-file-response
+
+a create-file-response step returns a response from regurgitator, with it's contents read from a file, the name of which is sourced from a parameter value. the main use case for this step is when you have an http request for a file, and you wish to simply return the contents of that file.
+
+```xml
+<rgw:create-file-response source="request-metadata:path-info" path-prefix="/assets"/>
+```
+
+the optional ``path-prefix`` attribute specifies a path fragment to be prefixed to the value found in the parameter, i.e. ``/file.xml`` becomes ``/assets/file.xml`` before the file is then read
+
 ## extension web constructs in xml
 
 ### query-param-processor

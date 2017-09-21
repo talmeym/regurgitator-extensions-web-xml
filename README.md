@@ -75,7 +75,7 @@ a create-file-response step returns a response from regurgitator, with it's cont
 <rgw:create-file-response source="request-metadata:path-info" path-prefix="/assets"/>
 ```
 
-the optional ``path-prefix`` attribute specifies a path fragment to be prefixed to the value found in the parameter, i.e. ``/file.xml`` becomes ``/assets/file.xml`` before the file is then read
+the optional ``path-prefix`` attribute specifies a path fragment to be prefixed to the value found in the parameter, making a request for ``/file.xml`` actually load and return ``/assets/file.xml``
 
 ## extension web constructs in xml
 

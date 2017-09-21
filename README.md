@@ -77,6 +77,8 @@ a create-file-response step returns a response from regurgitator, with it's cont
 
 the optional ``path-prefix`` attribute specifies a path fragment to be prefixed to the value found in the parameter, making a request for ``/file.xml`` actually load and return ``classpath:/assets/file.xml``
 
+if the file specified in the parameter is not found, the step returns a response with a status code of 404 and a payload of simply ``Not Found``
+
 ## extension web constructs in xml
 
 ### query-param-processor

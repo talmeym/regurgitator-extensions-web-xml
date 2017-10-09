@@ -23,7 +23,7 @@ public class CreateFileResponseXmlLoader implements XmlLoader<CreateFileResponse
         String source = getAttribute(element, SOURCE);
         String pathPrefix = getAttribute(element, PATH_PREFIX);
         ContextLocation location = source != null ? new ContextLocation(source) : null;
-        log.debug("Loaded file response '" + id + "'");
+        log.debug("Loaded file response '{}'", id);
         return new CreateFileResponse(id, new ValueSource(location, null), pathPrefix);
     }
 }

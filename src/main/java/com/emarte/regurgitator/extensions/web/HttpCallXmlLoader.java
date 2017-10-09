@@ -35,7 +35,7 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
             throw new RegurgitatorException("Both username and password (or neither) required");
         }
 
-        log.debug("Loaded HttpCall '" + id + "'");
+        log.debug("Loaded HttpCall '{}'", id);
         return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(getAttribute(element, HOST), parseInt(getAttribute(element, PORT)), username, password)), steps);
     }
 }

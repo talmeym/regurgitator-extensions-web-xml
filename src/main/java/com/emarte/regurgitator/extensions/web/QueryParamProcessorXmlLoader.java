@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2017 Miles Talmey.
+ * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
+ */
 package com.emarte.regurgitator.extensions.web;
 
 import com.emarte.regurgitator.core.*;
@@ -10,11 +14,11 @@ import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
 import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.KEY;
 
 public class QueryParamProcessorXmlLoader implements XmlLoader<QueryParamProcessor> {
-	public static final Log log = getLog(QueryParamProcessorXmlLoader.class);
+    private static final Log log = getLog(QueryParamProcessorXmlLoader.class);
 
-	@Override
-	public QueryParamProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		log.debug("Loaded QueryParamProcessor");
-		return new QueryParamProcessor(getAttribute(element, KEY));
-	}
+    @Override
+    public QueryParamProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
+        log.debug("Loaded QueryParamProcessor");
+        return new QueryParamProcessor(getAttribute(element, KEY));
+    }
 }

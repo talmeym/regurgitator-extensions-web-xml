@@ -11,37 +11,37 @@
     <xs:import schemaLocation="regurgitatorCore.xsd" namespace="http://core.regurgitator.emarte.com"/>
 
     <xs:complexType name="http-call">
-		<xs:sequence>
-			<xs:any minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+        <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
         <xs:attribute name="host" type="rgc:populated-string" use="required"/>
-		<xs:attribute name="port" type="xs:integer"  use="required"/>
+        <xs:attribute name="port" type="xs:integer"  use="required"/>
         <xs:attribute name="username" type="rgc:populated-string"/>
-		<xs:attribute name="password" type="rgc:populated-string"/>
-		<xs:attribute name="id" type="rgc:populated-string"/>
-	</xs:complexType>
+        <xs:attribute name="password" type="rgc:populated-string"/>
+        <xs:attribute name="id" type="rgc:populated-string"/>
+    </xs:complexType>
 
-	<xs:complexType name="query-param-processor">
-		<xs:attribute name="key" type="rgc:populated-string" use="required"/>
-	</xs:complexType>
+    <xs:complexType name="query-param-processor">
+        <xs:attribute name="key" type="rgc:populated-string" use="required"/>
+    </xs:complexType>
 
-	<xs:complexType name="create-http-response">
-		<xs:complexContent>
-			<xs:extension base="rg:create-response">
-				<xs:attribute name="status-code" type="xs:integer"/>
-				<xs:attribute name="content-type" type="rgc:populated-string"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
+    <xs:complexType name="create-http-response">
+        <xs:complexContent>
+            <xs:extension base="rg:create-response">
+                <xs:attribute name="status-code" type="xs:integer"/>
+                <xs:attribute name="content-type" type="rgc:populated-string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
-	<xs:complexType name="create-file-response">
-		<xs:attribute name="id" type="rgc:populated-string"/>
-		<xs:attribute name="source" type="rgc:populated-string" use="required"/>
-		<xs:attribute name="path-prefix" type="rgc:populated-string"/>
-	</xs:complexType>
+    <xs:complexType name="create-file-response">
+        <xs:attribute name="id" type="rgc:populated-string"/>
+        <xs:attribute name="source" type="rgc:populated-string" use="required"/>
+        <xs:attribute name="path-prefix" type="rgc:populated-string"/>
+    </xs:complexType>
 
-	<xs:element name="http-call" type="rgw:http-call"/>
-	<xs:element name="query-param-processor" type="rgw:query-param-processor"/>
-	<xs:element name="create-http-response" type="rgw:create-http-response"/>
-	<xs:element name="create-file-response" type="rgw:create-file-response"/>
+    <xs:element name="http-call" type="rgw:http-call"/>
+    <xs:element name="query-param-processor" type="rgw:query-param-processor"/>
+    <xs:element name="create-http-response" type="rgw:create-http-response"/>
+    <xs:element name="create-file-response" type="rgw:create-file-response"/>
 </xs:schema>

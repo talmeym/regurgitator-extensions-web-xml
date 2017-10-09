@@ -14,9 +14,9 @@ an http-call step make an outward http call
 
 ```xml
 <rgw:http-call host="http://otherservice.com" port="80" username="username" password="password">
-	<rg:create-response source="response-metadata:status-code">
-		<rge:freemarker-processor>http call returned ${value}</rge:freemarker-processor>
-	</rg:create-response>
+    <rg:create-response source="response-metadata:status-code">
+        <rge:freemarker-processor>http call returned ${value}</rge:freemarker-processor>
+    </rg:create-response>
 </rgw:http-call>
 ```
 
@@ -39,13 +39,13 @@ If instead you wish the http-call step to make an independent call, then the ste
 
 ```xml
 <rg:sequence isolate="true">
-	<rg:create-parameter name="request-metadata:method" value="GET"/>
-	<rg:create-parameter name="request-metadata:path-info" value="/service-api"/>
-	<rgw:http-call host="http://otherservice.com" port="80" username="username" password="password">
-		<rg:create-response source="response-metadata:status-code">
-			<rge:freemarker-processor>http call returned ${value}</rge:freemarker-processor>
-		</rg:create-response>
-	</rgw:http-call>
+    <rg:create-parameter name="request-metadata:method" value="GET"/>
+    <rg:create-parameter name="request-metadata:path-info" value="/service-api"/>
+    <rgw:http-call host="http://otherservice.com" port="80" username="username" password="password">
+        <rg:create-response source="response-metadata:status-code">
+            <rge:freemarker-processor>http call returned ${value}</rge:freemarker-processor>
+        </rg:create-response>
+    </rgw:http-call>
 </rg:sequence>
 ```
 
@@ -87,7 +87,7 @@ a query-param-processor processes a parameter value, extracting a value from wit
 
 ```xml
 <rg:create-parameter name="id" value="something=this&amp;id=that&amp;third=another">
-	<rgw:query-param-processor key="id"/>
+    <rgw:query-param-processor key="id"/>
 </rg:create-parameter>
 ```
 

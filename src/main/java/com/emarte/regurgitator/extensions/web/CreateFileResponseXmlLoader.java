@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 
 import java.util.Set;
 
-import static com.emarte.regurgitator.core.CoreConfigConstants.*;
+import static com.emarte.regurgitator.core.CoreConfigConstants.SOURCE;
 import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
 import static com.emarte.regurgitator.core.XmlConfigUtil.loadId;
 import static com.emarte.regurgitator.extensions.web.WebConfigConstants.PATH_PREFIX;

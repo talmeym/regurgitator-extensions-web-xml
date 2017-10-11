@@ -10,7 +10,8 @@ import org.w3c.dom.Element;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
-import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.*;
+import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.CONTENT_TYPE;
+import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.STATUS_CODE;
 
 public class CreateHttpResponseXmlLoader implements XmlLoader<CreateHttpResponse> {
     private final CreateResponseXmlLoader createResponseXmlLoader = new CreateResponseXmlLoader();

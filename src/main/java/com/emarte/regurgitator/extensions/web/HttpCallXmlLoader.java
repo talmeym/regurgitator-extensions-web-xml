@@ -28,14 +28,14 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
             steps.add(loaderUtil.deriveLoader(stepElement).load(stepElement, allIds));
         }
 
-        String username = getAttribute(element, USERNAME);
-        String password = getAttribute(element, PASSWORD);
+        String username = loadOptionalStr(element, USERNAME);
+        String password = loadOptionalStr(element, PASSWORD);
 
         if((username == null && password != null) || (username != null && password == null)) {
             throw new RegurgitatorException("Both username and password (or neither) required");
         }
 
         log.debug("Loaded HttpCall '{}'", id);
-        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(getAttribute(element, HOST), parseInt(getAttribute(element, PORT)), username, password)), steps);
+        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(loadOptionalStr(element, HOST), parseInt(loadOptionalStr(element, PORT)), username, password)), steps);
     }
 }

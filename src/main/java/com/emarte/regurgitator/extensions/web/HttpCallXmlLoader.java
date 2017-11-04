@@ -11,7 +11,7 @@ import java.util.*;
 
 import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.core.XmlConfigUtil.*;
-import static com.emarte.regurgitator.extensions.web.WebConfigConstants.*;
+import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.*;
 import static java.lang.Integer.parseInt;
 
 public class HttpCallXmlLoader implements XmlLoader<Step> {
@@ -36,6 +36,6 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
         }
 
         log.debug("Loaded HttpCall '{}'", id);
-        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(loadOptionalStr(element, HOST), parseInt(loadOptionalStr(element, PORT)), username, password)), steps);
+        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(loadMandatoryStr(element, HOST), parseInt(loadMandatoryStr(element, PORT)), username, password)), steps);
     }
 }

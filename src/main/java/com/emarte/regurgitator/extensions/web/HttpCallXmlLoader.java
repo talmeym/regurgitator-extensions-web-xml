@@ -28,6 +28,7 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
             steps.add(loaderUtil.deriveLoader(stepElement).load(stepElement, allIds));
         }
 
+        String protocol = loadOptionalStr(element, PROTOCOL);
         String username = loadOptionalStr(element, USERNAME);
         String password = loadOptionalStr(element, PASSWORD);
 
@@ -36,6 +37,6 @@ public class HttpCallXmlLoader implements XmlLoader<Step> {
         }
 
         log.debug("Loaded HttpCall '{}'", id);
-        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(loadMandatoryStr(element, HOST), parseInt(loadMandatoryStr(element, PORT)), username, password)), steps);
+        return new HttpCall(id, new HttpMessageProxy(new HttpClientWrapper(protocol != null ? protocol : "http", loadMandatoryStr(element, HOST), parseInt(loadMandatoryStr(element, PORT)), username, password)), steps);
     }
 }

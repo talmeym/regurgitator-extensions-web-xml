@@ -4,7 +4,10 @@
  */
 package com.emarte.regurgitator.extensions.web;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.CreateResponse;
+import com.emarte.regurgitator.core.CreateResponseXmlLoader;
+import com.emarte.regurgitator.core.RegurgitatorException;
+import com.emarte.regurgitator.core.XmlLoader;
 import org.w3c.dom.Element;
 
 import java.util.Set;

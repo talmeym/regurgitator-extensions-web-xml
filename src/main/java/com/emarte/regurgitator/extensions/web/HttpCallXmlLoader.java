@@ -18,13 +18,13 @@ import static java.lang.Integer.parseInt;
 
 public class HttpCallXmlLoader implements XmlLoader<Step> {
     private static final Log log = getLog(HttpCallXmlLoader.class);
-    private static final XmlLoaderUtil<XmlLoader<Step>> loaderUtil = new XmlLoaderUtil<XmlLoader<Step>>();
+    private static final XmlLoaderUtil<XmlLoader<Step>> loaderUtil = new XmlLoaderUtil<>();
 
     @Override
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
         String id = loadId(element, allIds);
 
-        List<Step> steps = new ArrayList<Step>();
+        List<Step> steps = new ArrayList<>();
 
         for(Element stepElement: getChildElements(element)) {
             steps.add(loaderUtil.deriveLoader(stepElement).load(stepElement, allIds));

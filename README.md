@@ -69,7 +69,7 @@ this step is primarily a convenience step, aggregating the following core config
 
 ### create-file-response
 
-a create-file-response step returns a response from regurgitator, with it's contents read from a file on the classpath, with the name of the file sourced from a parameter value. this is useful when you receive an http request for a file, and you wish to simply return the contents of that file, if it exists.
+a create-file-response step returns a response from regurgitator, with its contents read from a file on the classpath, with the name of the file sourced from a parameter value. this is useful when you receive an http request for a file, and you wish to simply return the contents of that file, if it exists.
 
 ```xml
 <rgw:create-file-response source="request-metadata:path-info" path-prefix="/assets"/>

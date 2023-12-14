@@ -5,7 +5,6 @@
 package com.emarte.regurgitator.extensions.web;
 
 import com.emarte.regurgitator.core.Log;
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.core.XmlLoader;
 import org.w3c.dom.Element;
 
@@ -19,7 +18,7 @@ public class QueryParamProcessorXmlLoader implements XmlLoader<QueryParamProcess
     private static final Log log = getLog(QueryParamProcessorXmlLoader.class);
 
     @Override
-    public QueryParamProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
+    public QueryParamProcessor load(Element element, Set<Object> allIds) {
         log.debug("Loaded QueryParamProcessor");
         return new QueryParamProcessor(loadOptionalStr(element, KEY));
     }

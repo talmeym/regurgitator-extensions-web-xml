@@ -63,7 +63,13 @@ this step is primarily a convenience step, aggregating the following core config
 
 ```xml
 <rg:create-parameter name="response-metadata:status-code" value="200"/>
+```
+
+```xml
 <rg:create-parameter name="response-metadata:content-type" value="application/json"/>
+```
+
+```xml
 <rg:create-response source="response"/>
 ```
 

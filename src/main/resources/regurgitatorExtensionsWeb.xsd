@@ -2,13 +2,13 @@
 <!--Copyright (C) 2017 Miles Talmey.-->
 <!--Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:rg="http://core.regurgitator.emarte.com"
-           xmlns:rgc="http://common.regurgitator.emarte.com"
-           xmlns:rgw="http://web.extensions.regurgitator.emarte.com"
-           targetNamespace="http://web.extensions.regurgitator.emarte.com" elementFormDefault="qualified">
+           xmlns:rg="http://core.regurgitator.emarte.uk"
+           xmlns:rgc="http://common.regurgitator.emarte.uk"
+           xmlns:rgw="http://web.extensions.regurgitator.emarte.uk"
+           targetNamespace="http://web.extensions.regurgitator.emarte.uk" elementFormDefault="qualified">
 
-    <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.com"/>
-    <xs:import schemaLocation="regurgitatorCore.xsd" namespace="http://core.regurgitator.emarte.com"/>
+    <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.uk"/>
+    <xs:import schemaLocation="regurgitatorCore.xsd" namespace="http://core.regurgitator.emarte.uk"/>
 
     <xs:complexType name="http-call">
         <xs:sequence>

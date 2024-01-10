@@ -4,17 +4,17 @@
  */
 package uk.emarte.regurgitator.extensions.web;
 
-import uk.emarte.regurgitator.core.*;
 import org.w3c.dom.Element;
+import uk.emarte.regurgitator.core.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import static java.lang.Integer.parseInt;
 import static uk.emarte.regurgitator.core.Log.getLog;
 import static uk.emarte.regurgitator.core.XmlConfigUtil.*;
 import static uk.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.*;
-import static java.lang.Integer.parseInt;
 
 public class HttpCallXmlLoader implements XmlLoader<Step> {
     private static final Log log = getLog(HttpCallXmlLoader.class);

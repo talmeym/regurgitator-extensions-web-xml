@@ -2,17 +2,17 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.extensions.web;
+package uk.emarte.regurgitator.extensions.web;
 
-import com.emarte.regurgitator.core.*;
 import org.w3c.dom.Element;
+import uk.emarte.regurgitator.core.*;
 
 import java.util.Set;
 
-import static com.emarte.regurgitator.core.CoreConfigConstants.SOURCE;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadId;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
-import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.PATH_PREFIX;
+import static uk.emarte.regurgitator.core.CoreConfigConstants.SOURCE;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.loadId;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
+import static uk.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.PATH_PREFIX;
 
 public class CreateFileResponseXmlLoader implements XmlLoader<CreateFileResponse> {
     private static final Log log = Log.getLog(CreateFileResponseXmlLoader.class);

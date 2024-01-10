@@ -2,19 +2,19 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.extensions.web;
+package uk.emarte.regurgitator.extensions.web;
 
-import com.emarte.regurgitator.core.*;
 import org.w3c.dom.Element;
+import uk.emarte.regurgitator.core.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.*;
-import static com.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.*;
 import static java.lang.Integer.parseInt;
+import static uk.emarte.regurgitator.core.Log.getLog;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.*;
+import static uk.emarte.regurgitator.extensions.web.ExtensionsWebConfigConstants.*;
 
 public class HttpCallXmlLoader implements XmlLoader<Step> {
     private static final Log log = getLog(HttpCallXmlLoader.class);

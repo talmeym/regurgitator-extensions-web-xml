@@ -33,9 +33,9 @@ while host, port and (optional) user credentials are specified in the xml, all o
 
 #### http proxy
 
-if using the ``RegurgitatorServlet`` to mock http requests, an http-call step not placed within an isolated sequence will, upon execution, be given a message object that already contains the ``request-metadata`` context from the incoming http call, and will therefore act as an http proxy, making an http call identical to the one received by the ``RegurgitatorServlet``, except redirected to a new endpoint. this is useful for forwarding on any calls you wish not to mock / implement.
+if using the ``RegurgitatorServlet`` to mock http requests, an ``http-call`` step not placed within an isolated sequence will, upon execution, be given a message object that already contains the ``request-metadata`` context from the incoming http call, and will therefore act as an http proxy, making an http call identical to the one received by the ``RegurgitatorServlet``, except redirected to a new endpoint. this is useful for forwarding on any calls you wish not to mock / implement.
 
-If instead you wish the http-call step to make an independent call, then the step should be placed within an isolated sequence, and should be proceeded by ``create-request`` steps to set the necessary method, path and header metadata.
+If instead you wish the http-call step to make an independent call, then the step should be placed within an isolated sequence, and should be proceeded by ``create-parameter`` steps to set the necessary method, path and header metadata.
 
 ```xml
 <rg:sequence isolate="true">

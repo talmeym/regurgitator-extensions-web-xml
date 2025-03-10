@@ -6,8 +6,6 @@ start your reading here: [regurgitator-all](https://talmeym.github.io/regurgitat
 
 read more about regurgitator in xml here: [regurgitator-core-xml](https://talmeym.github.io/regurgitator-core-xml#xml-configuration-of-regurgitator)
 
-[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-web-xml/0.1.2/)
-
 ## extension web steps in xml
 
 ### http-call 
@@ -100,3 +98,6 @@ a query-param-processor processes a parameter value, extracting a value from wit
 ```
 
 if the key appears in the query string more than once, the processor will aggregate the values into a collection.
+
+---
+api docs: [``0.1.3``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-web-xml/0.1.3/){:target="_blank"} [``0.1.2``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-web-xml/0.1.2/){:target="_blank"}
